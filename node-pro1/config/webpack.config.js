@@ -22,5 +22,11 @@ module.exports = {
 				loader: "babel"
 			}
 		]
+	},
+	devServer: {
+		contentBase: projectPath + "/public",//本地服务器所加载的页面所在的目录
+		colors: true,
+		historyApiFallback: true,
+		inline: true	//实时刷新
 	}
 }
