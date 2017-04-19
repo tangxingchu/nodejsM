@@ -1,0 +1,7 @@
+{
+  "name": "node-echo",
+  "main": "./lib/node-echo.js",
+  "dependencies": {
+    "webpack": "^2.4.1"
+  }
+}

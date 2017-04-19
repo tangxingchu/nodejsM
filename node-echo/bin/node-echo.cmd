@@ -1,0 +1,1 @@
+@node "D:\nodejsM\node-echo\bin\node-echo" %*

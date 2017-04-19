@@ -1,0 +1,3 @@
+var args = process.argv;
+var node_echo = require('../lib/node-echo')
+console.log(node_echo(args));
