@@ -1,0 +1,34 @@
+{
+    "name": "App1",
+    "metaType": "App",
+    "items": [
+        {
+            "name": "ScrollView1",
+            "metaType": "ScrollViewElement",
+            "horizontal": false,
+            "keyboardDismissMode": "none",
+            "keyboardShouldPersistTaps": false,
+            "refreshControl": false,
+            "showsHorizontalScrollIndicator": false,
+            "showsVerticalScrollIndicator": false,
+            "contentInset": "{0, 0, 0, 0}",
+            "contentOffset": "{x: 0, y: 0}",
+            "decelerationRate": "Normal",
+            "items": [
+                {
+                    "name": "RefreshControl1",
+                    "metaType": "RefreshControlElement",
+                    "refreshing": false,
+                    "enabled": false,
+                    "items": [
+                        
+                    ],
+                    "key": "000"
+                }
+            ],
+            "key": "00"
+        }
+    ],
+    "key": "0",
+    "open": 1
+}
