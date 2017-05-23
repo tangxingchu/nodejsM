@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 206);
+/******/ 	return __webpack_require__(__webpack_require__.s = 205);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -23121,17 +23121,44 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 204 */,
-/* 205 */,
-/* 206 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _div = __webpack_require__(89);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var _div2 = _interopRequireDefault(_div);
+exports.default = function () {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { name: 'hello world!', value: 0 };
+	var action = arguments[1];
+
+	switch (action.type) {
+		case 'INCREMENT':
+			console.log('INCREMENT');
+			return Object.assign({}, state, {
+				value: state.value + 1
+			});
+			break;
+		case 'DECREMENT':
+			console.log('DECREMENT');
+			return Object.assign({}, state, {
+				value: state.value - 1
+			});
+			break;
+		default:
+			return state;break;
+	}
+};
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 var _react = __webpack_require__(51);
 
@@ -23141,9 +23168,33 @@ var _reactDom = __webpack_require__(50);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _redux = __webpack_require__(88);
+
+var _index = __webpack_require__(204);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _div = __webpack_require__(89);
+
+var _div2 = _interopRequireDefault(_div);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_div2.default, { name: '\u5927\u5BB6\u597D' }), document.getElementById('content'));
+var store = (0, _redux.createStore)(_index2.default);
+
+var render = function render() {
+	_reactDom2.default.render(_react2.default.createElement(_div2.default, { name: store.getState().name, value: store.getState().value,
+		onIncrement: function onIncrement() {
+			return store.dispatch({ type: 'INCREMENT' });
+		},
+		onDecrement: function onDecrement() {
+			return store.dispatch({ type: 'DECREMENT' });
+		}
+	}), document.getElementById('content'));
+};
+
+render();
+store.subscribe(render);
 
 /***/ })
 /******/ ]);

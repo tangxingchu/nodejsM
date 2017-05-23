@@ -35,15 +35,14 @@ export default class DivTest extends Component {
 	
 	constructor(props) {
 		super(props);
-		this.state = {value: 0, name: this.props.name};
 	}
 
 	render() {
 		return (
-			<div>{this.state.name}, 这是一个测试div
-				<input value={this.state.value}/>
-				<button>+</button>
-				<button>-</button>
+			<div>{this.props.name}, 这是一个测试div
+				<input value={this.props.value}/>
+				<button onClick={this.props.onIncrement}>+</button>
+				<button onClick={this.props.onDecrement}>-</button>
 			</div>
 		)
 	}
