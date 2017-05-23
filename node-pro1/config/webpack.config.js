@@ -1,35 +1,32 @@
 var webpack = require('webpack');
 var path = require('path');
-var projectPath = __dirname + path.resolve("..");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var projectPath = path.resolve(__dirname, "..");
 module.exports = {
-	entry: projectPath + "/app/main.js",
+	entry: {
+		divtest: projectPath + "/reactjs/test_div.js"
+	},
 	output: {
 		path: projectPath + "/build",
-		filename: "[name]-[hash].js"
+		filename: "[name].js"
 	},
 	module: {
 		loaders: [
 			{
 				test: /\.json$/,
-				loader: "json"
+				use: {
+					loader: "json"
+				}
 			},
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: "babel"
-				query: {
-					presets: ['es2015', 'react']
+				use: {
+					loader: "babel-loader",
+					options: {
+						presets: ['es2015', 'react']
+					}
 				}
 			}
 		]
-	},
-	devServer: {
-		contentBase: projectPath + "/public",//本地服务器所加载的页面所在的目录
-		colors: true,
-		historyApiFallback: true,
-		inline: true	//实时刷新
 	}
 }

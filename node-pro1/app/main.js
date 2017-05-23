@@ -8,7 +8,7 @@ function travel(module, callback) {
 	console.log(AppConver.prototype['create' + metaType].apply(AppConver, []));
 }
 
-travel(module1,  function(str){
+travel(module1,  function(str) {
 	console.log(str);
 });
 

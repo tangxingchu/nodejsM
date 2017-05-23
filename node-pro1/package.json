@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "antd": "^2.9.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "redux": "^3.6.0",
     "webpack": "^2.4.1"
   },
   "devDependencies": {
