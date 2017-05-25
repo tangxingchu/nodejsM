@@ -43,6 +43,7 @@ export default class DivTest extends Component {
 				<input value={this.props.value}/>
 				<button onClick={this.props.onIncrement}>+</button>
 				<button onClick={this.props.onDecrement}>-</button>
+				<span>{this.props.zt}</span>
 			</div>
 		)
 	}
